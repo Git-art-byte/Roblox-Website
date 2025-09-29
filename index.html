@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to create a modern admin panel for Roblox Studio with our comprehensive tutorial">
+    <title>Roblox Admin Panel Tutorial | Modern Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <header>
+        <nav>
+            <div class="logo">🎮 RobloxTutorial</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tutorial">Tutorial</a></li>
+                <li><a href="#code">Code</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Admin Panel Tutorial</h1>
+        <p>Learn how to create a professional admin panel for your Roblox game</p>
+    </section>
+
+    <!-- ========================================
+         TUTORIAL SECTION
+         Add your text content here using .text-box
+         ======================================== -->
+    <section id="tutorial" class="container">
+        <h2 class="section-title">Tutorial Guide</h2>
+
+        <!-- TEXT BOX EXAMPLE 1 -->
+        <div class="text-box fade-in">
+            <h3>Introduction</h3>
+            <p>This tutorial will guide you through creating a modern admin panel. You'll learn about UI design, remote events, and server-side scripting.</p>
+            <p>Before starting, make sure you have basic knowledge of Roblox Studio and Lua programming.</p>
+        </div>
+
+        <!-- TEXT BOX EXAMPLE 2 -->
+        <div class="text-box fade-in">
+            <h3>Prerequisites</h3>
+            <ul>
+                <li>Roblox Studio installed</li>
+                <li>Basic Lua scripting knowledge</li>
+                <li>Understanding of RemoteEvents</li>
+                <li>Familiarity with GUI creation</li>
+            </ul>
+        </div>
+
+        <!-- TEXT BOX EXAMPLE 3 -->
+        <div class="text-box fade-in">
+            <h3>Step 1: Setup</h3>
+            <p>First, we need to set up the basic structure in Roblox Studio.</p>
+            <ol>
+                <li>Open Roblox Studio</li>
+                <li>Create a new place or open your existing project</li>
+                <li>Navigate to ReplicatedStorage</li>
+                <li>Prepare to add RemoteEvents</li>
+            </ol>
+        </div>
+
+        <!-- ADD MORE TEXT BOXES HERE -->
+        <!-- Just copy the structure above and change the content -->
+        <!-- Example:
+        <div class="text-box fade-in">
+            <h3>Your Title Here</h3>
+            <p>Your content here...</p>
+        </div>
+        -->
+
+    </section>
+
+    <!-- ========================================
+         CODE SECTION
+         Add your code blocks here using .code-box
+         ======================================== -->
+    <section id="code" class="container">
+        <h2 class="section-title">Code Examples</h2>
+
+        <!-- CODE BOX EXAMPLE 1 -->
+        <div class="code-box fade-in">
+            <div class="code-header">
+                <span class="code-title">LocalScript - Basic Setup</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            </div>
+            <pre><code>-- Example LocalScript
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+print("Admin panel loaded for: " .. player.Name)</code></pre>
+        </div>
+
+        <!-- CODE BOX EXAMPLE 2 -->
+        <div class="code-box fade-in">
+            <div class="code-header">
+                <span class="code-title">ServerScript - Basic Setup</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            </div>
+            <pre><code>-- Example ServerScript
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+-- Your server code here
+print("Server script running")</code></pre>
+        </div>
+
+        <!-- ADD MORE CODE BOXES HERE -->
+        <!-- Just copy the structure above and change the title and code -->
+        <!-- Example:
+        <div class="code-box fade-in">
+            <div class="code-header">
+                <span class="code-title">Your Code Title</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            </div>
+            <pre><code>-- Your code here</code></pre>
+        </div>
+        -->
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 RobloxTutorial - Modern Admin Panel Guide</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+  </html>

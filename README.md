@@ -171,7 +171,7 @@ This project is free to use for personal and commercial projects. Attribution ap
 Have questions or suggestions? Feel free to:
 - Open an issue on GitHub
 - Submit a pull request
-- Contact via [your-email@example.com]
+- Contact via [gitartbyesupport@gmail.com]
 
 ---
 

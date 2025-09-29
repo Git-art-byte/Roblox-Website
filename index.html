@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Learn how to create a modern admin panel for Roblox Studio with our comprehensive tutorial">
     <title>Roblox Admin Panel Tutorial | Modern Guide</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="bg-animation"></div>
@@ -15,6 +15,7 @@
             <div class="logo">🎮 RobloxTutorial</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
                 <li><a href="#tutorial">Tutorial</a></li>
                 <li><a href="#code">Code</a></li>
             </ul>
@@ -22,100 +23,312 @@
     </header>
 
     <section id="home" class="hero">
-        <h1>Admin Panel Tutorial</h1>
-        <p>Learn how to create a professional admin panel for your Roblox game</p>
+        <h1>Roblox Admin Panel Tutorial</h1>
+        <p>Learn how to create a professional admin panel with modern UI design and powerful commands</p>
     </section>
 
-    <!-- ========================================
-         TUTORIAL SECTION
-         Add your text content here using .text-box
-         ======================================== -->
-    <section id="tutorial" class="container">
-        <h2 class="section-title">Tutorial Guide</h2>
+    <!-- FEATURES OVERVIEW -->
+    <section id="features" class="container">
+        <h2 class="section-title">What You'll Build</h2>
+        
+        <div class="info-grid fade-in">
+            <div class="info-card">
+                <span class="info-card-icon">🎨</span>
+                <h3>Modern UI Design</h3>
+                <p>Clean, professional interface with smooth animations and responsive layout</p>
+            </div>
+            <div class="info-card">
+                <span class="info-card-icon">⚡</span>
+                <h3>Admin Commands</h3>
+                <p>Fly, invisible, invincible modes and more powerful player management tools</p>
+            </div>
+            <div class="info-card">
+                <span class="info-card-icon">📢</span>
+                <h3>Announcements</h3>
+                <p>Global message broadcasting with customizable toast notifications</p>
+            </div>
+            <div class="info-card">
+                <span class="info-card-icon">🔒</span>
+                <h3>Security</h3>
+                <p>Built-in anti-spam protection and admin permission system</p>
+            </div>
+            <div class="info-card">
+                <span class="info-card-icon">🎯</span>
+                <h3>Player Targeting</h3>
+                <p>Easy player selection with partial name matching capabilities</p>
+            </div>
+            <div class="info-card">
+                <span class="info-card-icon">📱</span>
+                <h3>F2 Toggle</h3>
+                <p>Quick access with keyboard shortcuts and draggable panel</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- TEXT BOX EXAMPLE 1 -->
+    <!-- TUTORIAL SECTION -->
+    <section id="tutorial" class="container">
+        <h2 class="section-title">Step-by-Step Guide</h2>
+
+        <!-- Introduction -->
         <div class="text-box fade-in">
-            <h3>Introduction</h3>
-            <p>This tutorial will guide you through creating a modern admin panel. You'll learn about UI design, remote events, and server-side scripting.</p>
-            <p>Before starting, make sure you have basic knowledge of Roblox Studio and Lua programming.</p>
+            <h3>📚 Introduction</h3>
+            <p>Welcome to the complete Roblox Admin Panel tutorial! This guide will teach you how to create a fully functional admin panel with a modern UI design.</p>
+            <p>You'll learn about RemoteEvents, server-side scripting, client-side UI, and best practices for game management.</p>
+            
+            <div class="note-box">
+                <strong>💡 Note:</strong> This tutorial assumes you have basic knowledge of Roblox Studio and Lua programming.
+            </div>
         </div>
 
-        <!-- TEXT BOX EXAMPLE 2 -->
+        <!-- Prerequisites -->
         <div class="text-box fade-in">
-            <h3>Prerequisites</h3>
+            <h3>📋 Prerequisites</h3>
+            <p>Before you begin, make sure you have:</p>
             <ul>
-                <li>Roblox Studio installed</li>
-                <li>Basic Lua scripting knowledge</li>
-                <li>Understanding of RemoteEvents</li>
-                <li>Familiarity with GUI creation</li>
+                <li><strong>Roblox Studio</strong> - Latest version installed on your computer</li>
+                <li><strong>Basic Lua Knowledge</strong> - Understanding of variables, functions, and loops</li>
+                <li><strong>RemoteEvents Understanding</strong> - How client-server communication works</li>
+                <li><strong>GUI Experience</strong> - Familiarity with creating UI elements in Roblox</li>
+            </ul>
+            
+            <div class="note-box warning">
+                <strong>⚠️ Important:</strong> Always test your admin panel in a private server before using it in a public game!
+            </div>
+        </div>
+
+        <!-- Step-by-step process -->
+        <div class="step-list">
+            <div class="step-card fade-in">
+                <h3>Setting Up RemoteEvents</h3>
+                <p>Navigate to <strong>ReplicatedStorage</strong> and create 5 RemoteEvents with these exact names:</p>
+                <ul style="margin-top: 0.5rem; margin-left: 2rem;">
+                    <li>AdminGlobalMessage</li>
+                    <li>GlobalMessage</li>
+                    <li>LuckUpdate</li>
+                    <li>AdminAction</li>
+                    <li>AdminClient</li>
+                </ul>
+            </div>
+
+            <div class="step-card fade-in">
+                <h3>Create the Folder Structure</h3>
+                <p>Organize your scripts properly:</p>
+                <ul style="margin-top: 0.5rem; margin-left: 2rem;">
+                    <li><strong>StarterGui</strong> → Create a ScreenGui → Add LocalScript (AdminPanelClient)</li>
+                    <li><strong>ServerScriptService</strong> → Add Script (AdminPanelServer)</li>
+                    <li><strong>ServerScriptService</strong> → Add ModuleScript (LuckManager)</li>
+                </ul>
+            </div>
+
+            <div class="step-card fade-in">
+                <h3>Configure Admin List</h3>
+                <p>In your server script, create a table of admin user IDs:</p>
+                <div class="note-box success" style="margin-top: 1rem;">
+                    <strong>✅ Tip:</strong> Use User IDs instead of usernames for better security. You can find your User ID in your Roblox profile URL.
+                </div>
+            </div>
+
+            <div class="step-card fade-in">
+                <h3>Implement the UI</h3>
+                <p>The client script creates a modern UI with tabs, announcement system, and admin controls. It includes drag functionality and F2 toggle for easy access.</p>
+            </div>
+
+            <div class="step-card fade-in">
+                <h3>Add Server Logic</h3>
+                <p>The server script handles all admin commands, validates permissions, and manages player states. It includes cooldown systems to prevent spam.</p>
+            </div>
+
+            <div class="step-card fade-in">
+                <h3>Test Everything</h3>
+                <p>Run your game in Studio and test:</p>
+                <ul style="margin-top: 0.5rem; margin-left: 2rem;">
+                    <li>Press F2 to open the panel</li>
+                    <li>Send test announcements</li>
+                    <li>Try admin commands (fly, invisible, etc.)</li>
+                    <li>Test on mobile devices if needed</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Additional Tips -->
+        <div class="text-box fade-in">
+            <h3>💡 Pro Tips</h3>
+            <ul>
+                <li><strong>Security First:</strong> Never give admin access to untrusted players</li>
+                <li><strong>Backup Your Work:</strong> Save your place regularly and use version control</li>
+                <li><strong>Test in Private:</strong> Always test new features in a private server first</li>
+                <li><strong>Use DataStores:</strong> Consider saving admin logs for moderation purposes</li>
+                <li><strong>Custom Commands:</strong> Extend the system with your own unique commands</li>
             </ul>
         </div>
 
-        <!-- TEXT BOX EXAMPLE 3 -->
+        <!-- Common Issues -->
         <div class="text-box fade-in">
-            <h3>Step 1: Setup</h3>
-            <p>First, we need to set up the basic structure in Roblox Studio.</p>
-            <ol>
-                <li>Open Roblox Studio</li>
-                <li>Create a new place or open your existing project</li>
-                <li>Navigate to ReplicatedStorage</li>
-                <li>Prepare to add RemoteEvents</li>
-            </ol>
+            <h3>🔧 Troubleshooting Common Issues</h3>
+            <p><strong>Panel won't open with F2:</strong></p>
+            <ul>
+                <li>Check that the LocalScript is in StarterGui → ScreenGui</li>
+                <li>Verify the script is not disabled</li>
+                <li>Make sure there are no errors in the Output window</li>
+            </ul>
+            
+            <p style="margin-top: 1rem;"><strong>Admin commands not working:</strong></p>
+            <ul>
+                <li>Verify your User ID is in the admin list</li>
+                <li>Check that all RemoteEvents are properly named</li>
+                <li>Look for errors in the Server Output</li>
+            </ul>
+            
+            <p style="margin-top: 1rem;"><strong>UI looks broken:</strong></p>
+            <ul>
+                <li>Ensure all UI elements have proper anchors</li>
+                <li>Check UICorner and UIStroke properties</li>
+                <li>Test on different screen resolutions</li>
+            </ul>
         </div>
-
-        <!-- ADD MORE TEXT BOXES HERE -->
-        <!-- Just copy the structure above and change the content -->
-        <!-- Example:
-        <div class="text-box fade-in">
-            <h3>Your Title Here</h3>
-            <p>Your content here...</p>
-        </div>
-        -->
-
     </section>
 
-    <!-- ========================================
-         CODE SECTION
-         Add your code blocks here using .code-box
-         ======================================== -->
+    <!-- CODE SECTION -->
     <section id="code" class="container">
         <h2 class="section-title">Code Examples</h2>
 
-        <!-- CODE BOX EXAMPLE 1 -->
+        <!-- Client Script Setup -->
         <div class="code-box fade-in">
             <div class="code-header">
-                <span class="code-title">LocalScript - Basic Setup</span>
+                <span class="code-title">LocalScript - Basic Setup & Theme</span>
                 <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
             </div>
-            <pre><code>-- Example LocalScript
+            <pre><code>-- AdminPanelClient - Modern UI Setup
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
 local Players = game:GetService("Players")
+
 local player = Players.LocalPlayer
 
-print("Admin panel loaded for: " .. player.Name)</code></pre>
+-- Get RemoteEvents
+local EVT_SEND_ANN = ReplicatedStorage:WaitForChild("AdminGlobalMessage")
+local EVT_BROADCAST = ReplicatedStorage:WaitForChild("GlobalMessage")
+local EVT_ADMIN_ACT = ReplicatedStorage:WaitForChild("AdminAction")
+
+-- Theme Colors
+local Colors = {
+    bg = Color3.fromRGB(14, 14, 18),
+    card = Color3.fromRGB(23, 23, 29),
+    stroke = Color3.fromRGB(38, 38, 46),
+    text = Color3.fromRGB(235, 238, 245),
+    blue = Color3.fromRGB(60, 110, 230)
+}
+
+print("Admin panel loaded successfully!")</code></pre>
         </div>
 
-        <!-- CODE BOX EXAMPLE 2 -->
+        <!-- Server Script Setup -->
         <div class="code-box fade-in">
             <div class="code-header">
-                <span class="code-title">ServerScript - Basic Setup</span>
+                <span class="code-title">ServerScript - Admin List & Permissions</span>
                 <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
             </div>
-            <pre><code>-- Example ServerScript
+            <pre><code>-- AdminPanelServer - Permission System
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
 
--- Your server code here
-print("Server script running")</code></pre>
+-- ADMIN LIST - Add your User IDs here
+local ADMINS = {
+    123456789,  -- Replace with your User ID
+    987654321,  -- Add more admin IDs
+}
+
+-- Check if player is admin
+local function isAdmin(player)
+    for _, id in ipairs(ADMINS) do
+        if player.UserId == id then
+            return true
+        end
+    end
+    return false
+end
+
+-- Handle admin actions
+local EVT_ADMIN_ACT = ReplicatedStorage:WaitForChild("AdminAction")
+EVT_ADMIN_ACT.OnServerEvent:Connect(function(player, action, data)
+    if not isAdmin(player) then
+        warn(player.Name .. " tried to use admin without permission!")
+        return
+    end
+    
+    print(player.Name .. " used admin command: " .. action)
+    -- Your command logic here
+end)</code></pre>
+        </div>
+
+        <!-- F2 Toggle Code -->
+        <div class="code-box fade-in">
+            <div class="code-header">
+                <span class="code-title">LocalScript - F2 Toggle Functionality</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            </div>
+            <pre><code>-- F2 Toggle System
+local UserInputService = game:GetService("UserInputService")
+local gui = script.Parent -- Your ScreenGui
+
+-- Toggle panel with F2
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    
+    if input.KeyCode == Enum.KeyCode.F2 then
+        gui.Enabled = not gui.Enabled
+        print("Admin panel toggled:", gui.Enabled)
+    end
+end)</code></pre>
+        </div>
+
+        <!-- Toast Notification System -->
+        <div class="code-box fade-in">
+            <div class="code-header">
+                <span class="code-title">LocalScript - Toast Notification System</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            </div>
+            <pre><code>-- Toast Notification System
+local TweenService = game:GetService("TweenService")
+
+local function showToast(text, color)
+    local toast = -- Your toast frame
+    local label = -- Your text label
+    
+    label.Text = text
+    label.TextColor3 = color or Color3.new(1, 1, 1)
+    
+    toast.Visible = true
+    
+    -- Fade in
+    TweenService:Create(toast, TweenInfo.new(0.3), {
+        BackgroundTransparency = 0
+    }):Play()
+    
+    wait(2)
+    
+    -- Fade out
+    TweenService:Create(toast, TweenInfo.new(0.3), {
+        BackgroundTransparency = 1
+    }):Play()
+    
+    wait(0.3)
+    toast.Visible = false
+end
+
+-- Usage
+showToast("Admin panel loaded!", Color3.fromRGB(0, 255, 0))</code></pre>
         </div>
 
         <!-- ADD MORE CODE BOXES HERE -->
-        <!-- Just copy the structure above and change the title and code -->
-        <!-- Example:
+        <!-- Example template:
         <div class="code-box fade-in">
             <div class="code-header">
                 <span class="code-title">Your Code Title</span>
                 <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
             </div>
-            <pre><code>-- Your code here</code></pre>
+            <pre><code>-- Your Lua code here</code></pre>
         </div>
         -->
 
@@ -123,8 +336,14 @@ print("Server script running")</code></pre>
 
     <footer>
         <p>&copy; 2025 RobloxTutorial - Modern Admin Panel Guide</p>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#tutorial">Tutorial</a>
+            <a href="#code">Code</a>
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-  </html>
+    </html>
